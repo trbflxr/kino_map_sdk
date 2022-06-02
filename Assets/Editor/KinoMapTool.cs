@@ -276,6 +276,8 @@ namespace Editor {
     }
 
     private void LoadCache() {
+      EnsureCacheFolder();
+
       if (!File.Exists(CACHE_FILE)) {
         Debug.LogWarning($"Kino: Unable to load maps cache, file is not exists");
         return;
@@ -310,6 +312,8 @@ namespace Editor {
     }
 
     private void SaveCache() {
+      EnsureCacheFolder();
+
       using (var stream = new FileStream(CACHE_FILE, FileMode.Create, FileAccess.Write)) {
         using (var writer = new BinaryWriter(stream)) {
           writer.Write(MAP_TOOL_VERSION);
@@ -330,6 +334,8 @@ namespace Editor {
     }
 
     private void WipeCache() {
+      EnsureCacheFolder();
+
       try {
         if (File.Exists(CACHE_FILE)) {
           File.Delete(CACHE_FILE);
@@ -337,6 +343,12 @@ namespace Editor {
       }
       catch (Exception e) {
         Debug.LogError($"Kino: Unable to wipe map cache, exception: {e}");
+      }
+    }
+
+    private static void EnsureCacheFolder() {
+      if (!Directory.Exists(BUILD_DIR)) {
+        Directory.CreateDirectory(BUILD_DIR);
       }
     }
   }
