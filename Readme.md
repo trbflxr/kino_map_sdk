@@ -1,6 +1,6 @@
-# Kino Unity map SDK (WIP)
-Here you can get the SDK you will need to make a map for Kino's Unity asset bundle map loader. 
+# The repository has been moved
 
-> How to use the SDK: [Kino Map Documentation](https://github.com/trbflxr/kino/tree/master/MapDocumentation/KinoMapDoc.md)
+> [!NOTE]  
+> Tools for creating maps are now part of the **Content SDK**
 
-> Main Kino repository: [Kino](https://github.com/trbflxr/kino)
+You can find the documentation and installation instructions for the **Content SDK** in the [main repository](https://github.com/trbflxr/kino/blob/master/ContentCreation/ContentInfo.md).
